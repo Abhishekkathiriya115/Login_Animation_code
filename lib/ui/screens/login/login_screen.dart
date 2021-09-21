@@ -3,7 +3,6 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mukminapp/ui/screens/home/home_screen.dart';
-import 'package:mukminapp/ui/screens/signup_screen.dart';
 import 'package:mukminapp/ui/utils/styles.dart';
 import 'package:mukminapp/ui/widgets/background.dart';
 import 'widgets/custom_route.dart';
@@ -26,11 +25,15 @@ class _LoginScreenState extends State<LoginScreen> {
       color: Styles.backGroundColor,
       child: BackGround(
         child: Scaffold(
-          appBar: AppBar(
-              toolbarHeight: 10.0,
-              automaticallyImplyLeading: false,
-              backgroundColor: Colors.transparent,
-              elevation: 0.0),
+          // appBar: AppBar(
+          //     toolbarHeight: 10.0,
+          //     automaticallyImplyLeading: false,
+          //     backgroundColor: Colors.transparent,
+          //     elevation: 0.0),   // appBar: AppBar(
+          //     toolbarHeight: 10.0,
+          //     automaticallyImplyLeading: false,
+          //     backgroundColor: Colors.transparent,
+          //     elevation: 0.0),
           backgroundColor: Colors.transparent,
           body: FlutterLogin(
             title: 'MUKMIN APP',
@@ -47,10 +50,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 // shape: ContinuousRectangleBorder(
                 //     borderRadius: BorderRadius.circular(100.0)),
               ),
+              accentColor: Colors.transparent,
               buttonTheme: LoginButtonTheme(
                 splashColor: Colors.deepPurple,
                 backgroundColor: Colors.deepPurple,
-                highlightColor: Colors.lightGreen,
                 elevation: 0.0,
                 highlightElevation: 6.0),
 
@@ -112,6 +115,20 @@ class _LoginScreenState extends State<LoginScreen> {
               return _goToHome();
               // Show new password dialog
             },
+            messages: LoginMessages(
+              userHint: 'Email *',
+              passwordHint: 'Pilih kata laluan *',
+              confirmPasswordHint: 'Sahkan kata laluan *',
+              loginButton: 'Log Masuk',
+              signupButton: 'Daftar',
+              forgotPasswordButton: 'Terlupa kata laluan?',
+              recoverPasswordButton: 'HELP ME',
+              goBackButton: 'GO BACK',
+              confirmPasswordError: 'Not match!',
+              recoverPasswordDescription:
+              'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+              recoverPasswordSuccess: 'Password rescued successfully',
+            ),
             showDebugButtons: false,
           ),
         ),
